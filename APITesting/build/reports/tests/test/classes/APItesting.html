@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">3</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.003s</div>
+<div class="counter">4.746s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,17 @@
 </thead>
 <tr>
 <td class="success">sampleTest</td>
-<td class="success">0.003s</td>
+<td class="success">2.645s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldCreateUser</td>
+<td class="success">1.842s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testWithBodyParam</td>
+<td class="success">0.259s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,7 +97,140 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>hello
+<pre>HTTP/1.1 200 OK
+Date: Mon, 17 May 2021 05:44:04 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Etag: W/&quot;3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8&quot;
+Via: 1.1 vegur
+Cache-Control: max-age=14400
+CF-Cache-Status: HIT
+Age: 1255
+cf-request-id: 0a1a736bbc00004acfe2221000000001
+Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=5VE3fvyPPBi2LmBwbczWGwIWDYmfxut3n8KkYapaRcc%2FYf3wmiJ1%2Fje03BjRpbDM7nxJi42SlAjhjistRtVM%2FgGsqkSMOjOvXCs%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Vary: Accept-Encoding
+Server: cloudflare
+CF-RAY: 650a8825fbb14acf-HYD
+Content-Encoding: gzip
+alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
+
+{
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 6,
+    &quot;total&quot;: 12,
+    &quot;total_pages&quot;: 2,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;email&quot;: &quot;george.bluth@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;George&quot;,
+            &quot;last_name&quot;: &quot;Bluth&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/1-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;email&quot;: &quot;janet.weaver@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Janet&quot;,
+            &quot;last_name&quot;: &quot;Weaver&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/2-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;email&quot;: &quot;emma.wong@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Emma&quot;,
+            &quot;last_name&quot;: &quot;Wong&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/3-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;email&quot;: &quot;eve.holt@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Eve&quot;,
+            &quot;last_name&quot;: &quot;Holt&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/4-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;email&quot;: &quot;charles.morris@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Charles&quot;,
+            &quot;last_name&quot;: &quot;Morris&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/5-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;email&quot;: &quot;tracey.ramos@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Tracey&quot;,
+            &quot;last_name&quot;: &quot;Ramos&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/6-image.jpg&quot;
+        }
+    ],
+    &quot;support&quot;: {
+        &quot;url&quot;: &quot;https://reqres.in/#support-heading&quot;,
+        &quot;text&quot;: &quot;To keep ReqRes free, contributions towards server costs are appreciated!&quot;
+    }
+}
+HTTP/1.1 201 Created
+Date: Mon, 17 May 2021 05:44:05 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 64
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Etag: W/&quot;40-vTB/xHLWxDm+iBQB4LRfeQunZoc&quot;
+Via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0a1a736d9600004af968876000000001
+Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=4XwQ31BtFpdC9WrU0KAANiKUL588xDGaSFPJaQSKcwS9h8fdI6Z0Fmf1GquPPYm2jQhiGy%2FEDM%2Brfb3d02LSfjdFZcDjXVp1z6A%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 650a8828efbd4af9-HYD
+alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
+
+{
+    &quot;name&quot;: &quot;Tom&quot;,
+    &quot;id&quot;: &quot;444&quot;,
+    &quot;createdAt&quot;: &quot;2021-05-17T05:44:05.523Z&quot;
+}
+HTTP/1.1 200 OK
+Date: Mon, 17 May 2021 05:44:07 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Etag: W/&quot;110-Xdg3LtI+q2zMxihHlfeIZQo/bvY&quot;
+Via: 1.1 vegur
+Cache-Control: max-age=14400
+CF-Cache-Status: HIT
+Age: 773
+cf-request-id: 0a1a7374d000004b22febc6000000001
+Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=BZC4ygUcyskFetduHFR2ESlmkjgWOmmA4S9byr0xwG5YXMrApeMBNVZC%2BInPXHbFa73yw7DqOJxnakyOiENtmjJa%2BoAqlrzzifA%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Vary: Accept-Encoding
+Server: cloudflare
+CF-RAY: 650a88347b744b22-HYD
+Content-Encoding: gzip
+alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
+
+{
+    &quot;data&quot;: {
+        &quot;id&quot;: 4,
+        &quot;email&quot;: &quot;eve.holt@reqres.in&quot;,
+        &quot;first_name&quot;: &quot;Eve&quot;,
+        &quot;last_name&quot;: &quot;Holt&quot;,
+        &quot;avatar&quot;: &quot;https://reqres.in/img/faces/4-image.jpg&quot;
+    },
+    &quot;support&quot;: {
+        &quot;url&quot;: &quot;https://reqres.in/#support-heading&quot;,
+        &quot;text&quot;: &quot;To keep ReqRes free, contributions towards server costs are appreciated!&quot;
+    }
+}
 </pre>
 </span>
 </div>
@@ -99,7 +242,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.0</a> at 17-May-2021, 10:49:47 am</p>
+<a href="http://www.gradle.org">Gradle 7.0</a> at 17-May-2021, 11:14:07 am</p>
 </div>
 </div>
 </body>
