@@ -10,13 +10,11 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.testng:testng:7.1.0'
 
-    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
-    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.0'
-
-// https://mvnrepository.com/artifact/org.testng/testng
-    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.0'
+    implementation group: 'org.testng', name: 'testng', version: '7.4.0'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.2'
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 
 
 }

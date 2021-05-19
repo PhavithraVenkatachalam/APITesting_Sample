@@ -23,13 +23,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">3</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">4.746s</div>
+<div class="counter">3.363s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,13 +61,118 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="shouldUpdateUser"></a>
+<h3 class="failures">shouldUpdateUser</h3>
+<span class="code">
+<pre>com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;first_name&quot; (class updateUser.response.UpdateUserResponse), not marked as ignorable (3 known properties: &quot;updatedAt&quot;, &quot;statusCode&quot;, &quot;statuscode&quot;])
+ at [Source: (String)&quot;{&quot;first_name&quot;:&quot;Hari&quot;,&quot;updatedAt&quot;:&quot;2021-05-19T09:32:35.547Z&quot;}&quot;; line: 1, column: 16] (through reference chain: updateUser.response.UpdateUserResponse[&quot;first_name&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:987)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1974)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1701)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1679)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:330)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:187)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4593)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3548)
+	at com.fasterxml.jackson.databind.ObjectMapper$readValue$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.groovy:46)
+	at io.restassured.path.json.mapping.JsonPathObjectDeserializer$deserialize.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.mapping.Jackson2Mapper.deserialize(Jackson2Mapper.groovy:58)
+	at io.restassured.mapper.ObjectMapper$deserialize.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.mapping.ObjectMapping.parseWithJackson2(ObjectMapping.groovy:238)
+	at io.restassured.internal.mapping.ObjectMapping$parseWithJackson2$0.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at io.restassured.internal.mapping.ObjectMapping.deserialize(ObjectMapping.groovy:59)
+	at io.restassured.internal.mapping.ObjectMapping$deserialize.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:226)
+	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
+	at UserClient.updateUser(UserClient.java:57)
+	at APItesting.shouldUpdateUser(APItesting.java:58)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:141)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:135)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -78,159 +183,16 @@
 </tr>
 </thead>
 <tr>
-<td class="success">sampleTest</td>
-<td class="success">2.645s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">shouldCreateUser</td>
-<td class="success">1.842s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testWithBodyParam</td>
-<td class="success">0.259s</td>
-<td class="success">passed</td>
+<td class="failures">shouldUpdateUser</td>
+<td class="failures">3.363s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>HTTP/1.1 200 OK
-Date: Mon, 17 May 2021 05:44:04 GMT
-Content-Type: application/json; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-Etag: W/&quot;3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8&quot;
-Via: 1.1 vegur
-Cache-Control: max-age=14400
-CF-Cache-Status: HIT
-Age: 1255
-cf-request-id: 0a1a736bbc00004acfe2221000000001
-Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=5VE3fvyPPBi2LmBwbczWGwIWDYmfxut3n8KkYapaRcc%2FYf3wmiJ1%2Fje03BjRpbDM7nxJi42SlAjhjistRtVM%2FgGsqkSMOjOvXCs%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
-NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
-Vary: Accept-Encoding
-Server: cloudflare
-CF-RAY: 650a8825fbb14acf-HYD
-Content-Encoding: gzip
-alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-
-{
-    &quot;page&quot;: 1,
-    &quot;per_page&quot;: 6,
-    &quot;total&quot;: 12,
-    &quot;total_pages&quot;: 2,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;email&quot;: &quot;george.bluth@reqres.in&quot;,
-            &quot;first_name&quot;: &quot;George&quot;,
-            &quot;last_name&quot;: &quot;Bluth&quot;,
-            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/1-image.jpg&quot;
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;email&quot;: &quot;janet.weaver@reqres.in&quot;,
-            &quot;first_name&quot;: &quot;Janet&quot;,
-            &quot;last_name&quot;: &quot;Weaver&quot;,
-            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/2-image.jpg&quot;
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;email&quot;: &quot;emma.wong@reqres.in&quot;,
-            &quot;first_name&quot;: &quot;Emma&quot;,
-            &quot;last_name&quot;: &quot;Wong&quot;,
-            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/3-image.jpg&quot;
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;email&quot;: &quot;eve.holt@reqres.in&quot;,
-            &quot;first_name&quot;: &quot;Eve&quot;,
-            &quot;last_name&quot;: &quot;Holt&quot;,
-            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/4-image.jpg&quot;
-        },
-        {
-            &quot;id&quot;: 5,
-            &quot;email&quot;: &quot;charles.morris@reqres.in&quot;,
-            &quot;first_name&quot;: &quot;Charles&quot;,
-            &quot;last_name&quot;: &quot;Morris&quot;,
-            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/5-image.jpg&quot;
-        },
-        {
-            &quot;id&quot;: 6,
-            &quot;email&quot;: &quot;tracey.ramos@reqres.in&quot;,
-            &quot;first_name&quot;: &quot;Tracey&quot;,
-            &quot;last_name&quot;: &quot;Ramos&quot;,
-            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/6-image.jpg&quot;
-        }
-    ],
-    &quot;support&quot;: {
-        &quot;url&quot;: &quot;https://reqres.in/#support-heading&quot;,
-        &quot;text&quot;: &quot;To keep ReqRes free, contributions towards server costs are appreciated!&quot;
-    }
-}
-HTTP/1.1 201 Created
-Date: Mon, 17 May 2021 05:44:05 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 64
-Connection: keep-alive
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-Etag: W/&quot;40-vTB/xHLWxDm+iBQB4LRfeQunZoc&quot;
-Via: 1.1 vegur
-CF-Cache-Status: DYNAMIC
-cf-request-id: 0a1a736d9600004af968876000000001
-Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=4XwQ31BtFpdC9WrU0KAANiKUL588xDGaSFPJaQSKcwS9h8fdI6Z0Fmf1GquPPYm2jQhiGy%2FEDM%2Brfb3d02LSfjdFZcDjXVp1z6A%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
-NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
-Server: cloudflare
-CF-RAY: 650a8828efbd4af9-HYD
-alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-
-{
-    &quot;name&quot;: &quot;Tom&quot;,
-    &quot;id&quot;: &quot;444&quot;,
-    &quot;createdAt&quot;: &quot;2021-05-17T05:44:05.523Z&quot;
-}
-HTTP/1.1 200 OK
-Date: Mon, 17 May 2021 05:44:07 GMT
-Content-Type: application/json; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-Etag: W/&quot;110-Xdg3LtI+q2zMxihHlfeIZQo/bvY&quot;
-Via: 1.1 vegur
-Cache-Control: max-age=14400
-CF-Cache-Status: HIT
-Age: 773
-cf-request-id: 0a1a7374d000004b22febc6000000001
-Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=BZC4ygUcyskFetduHFR2ESlmkjgWOmmA4S9byr0xwG5YXMrApeMBNVZC%2BInPXHbFa73yw7DqOJxnakyOiENtmjJa%2BoAqlrzzifA%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
-NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
-Vary: Accept-Encoding
-Server: cloudflare
-CF-RAY: 650a88347b744b22-HYD
-Content-Encoding: gzip
-alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-
-{
-    &quot;data&quot;: {
-        &quot;id&quot;: 4,
-        &quot;email&quot;: &quot;eve.holt@reqres.in&quot;,
-        &quot;first_name&quot;: &quot;Eve&quot;,
-        &quot;last_name&quot;: &quot;Holt&quot;,
-        &quot;avatar&quot;: &quot;https://reqres.in/img/faces/4-image.jpg&quot;
-    },
-    &quot;support&quot;: {
-        &quot;url&quot;: &quot;https://reqres.in/#support-heading&quot;,
-        &quot;text&quot;: &quot;To keep ReqRes free, contributions towards server costs are appreciated!&quot;
-    }
-}
+<pre>Hari
 </pre>
 </span>
 </div>
@@ -242,7 +204,7 @@ alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.0</a> at 17-May-2021, 11:14:07 am</p>
+<a href="http://www.gradle.org">Gradle 7.0</a> at 19-May-2021, 3:02:36 pm</p>
 </div>
 </div>
 </body>

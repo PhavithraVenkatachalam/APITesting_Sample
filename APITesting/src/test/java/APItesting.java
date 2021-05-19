@@ -1,66 +1,76 @@
-import groovy.json.JsonParser;
+import createUser.request.CreateUserRequest;
+import createUser.response.CreateUserResponse;
+import getUser.request.GetUserRequest;
+import getUser.response.GetUserResponse;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import updateUser.request.UpdateUserRequest;
+import updateUser.response.UpdateUserResponse;
 
 import static io.restassured.RestAssured.given;
 
 public class APItesting {
 
-    @Test
-    public void sampleTest()
+    UserClient userClient;
+
+    @BeforeClass
+    public void beforeClass()
     {
-                given()
-                        .contentType(ContentType.JSON)
-                .when()
-                        .get("https://reqres.in/api/users")
-                .then()
+
+        userClient=new UserClient();
+    }
+
+    @Test
+    public void shouldGetAllUsers()
+    {
+                userClient.getAllUsers()
+                        .then()
                         .assertThat().statusCode(200)
                         .log().all();
     }
 
-    @Test
-    public void testWithBodyParam()
-    {
-                given()
-                        .contentType(ContentType.JSON)
-                        .pathParam("user",4)
-                .when()
-                        .get("https://reqres.in/api/users/{user}")
-                .then()
-                        .assertThat().statusCode(200)
-                        .log().all();
 
+    @Test
+    public void shouldGetUser()
+    {
+                GetUserRequest userRequest=new GetUserRequest(2);
+                GetUserResponse userResponse=userClient.getSpecificUser(userRequest);
+                System.out.println(userResponse.getData());
     }
+
 
     @Test
     public void shouldCreateUser()
     {
-        given()
-                .contentType(ContentType.JSON)
-                .body("{\"name\":\"Tom\"}")
-                .when()
-                .post("https://reqres.in/api/users")
-                .then()
-                .assertThat().statusCode(201)
-                .log().all();
+        CreateUserRequest userRequest=new CreateUserRequest("Tom");
+        CreateUserResponse userResponse= userClient.createUser(userRequest);
 
-        //asserting the created response using response object
-        Response res=given()
-                .contentType(ContentType.JSON)
-                .body("{\"name\":\"Tom\"}")
-                .when()
-                .post("https://reqres.in/api/users");
-
-        Assert.assertEquals(res.jsonPath().get("name"),"Tom");
-
+        Assert.assertEquals(userResponse.getName(),"Tom");
+        Assert.assertEquals(userResponse.getStatusCode(),201);
     }
+
+    @Test
+    public void shouldUpdateUser()
+    {
+        UpdateUserRequest userRequest=new UpdateUserRequest("Hari");
+        UpdateUserResponse response = userClient.updateUser(userRequest);
+        Assert.assertEquals(response.getStatusCode(),200);
+    }
+
 
     @Test
     public void sampleTestWithQueryParam()
     {
-
+        given()
+                .contentType(ContentType.JSON)
+                .queryParam("brewed_before","11-2020")
+                .queryParam("abv_gt",6)
+                .when()
+                .get("https://api.punkapi.com/v2/beers")
+                .then()
+                .assertThat().statusCode(200);
     }
 
 }
