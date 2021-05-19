@@ -1,5 +1,6 @@
 import createUser.request.CreateUserRequest;
 import createUser.response.CreateUserResponse;
+import deleteUser.DeleteUserRequest;
 import getUser.request.GetUserRequest;
 import getUser.response.GetUserResponse;
 import io.restassured.http.ContentType;
@@ -44,20 +45,30 @@ public Response getAllUsers() {
         return response;
     }
 
-//    public UpdateUserResponse updateUser(UpdateUserRequest userRequest){
-//        JSONObject requestParams=new JSONObject();
-//        requestParams.put("first_name",userRequest.getUserName());
-//
-//        System.out.println(userRequest.getUserName());
-//        UpdateUserResponse response=given()
-//                .contentType(ContentType.JSON)
-//                .body(requestParams.toJSONString())
-//                .when()
-//                .put("https://reqres.in/api/users/2")
-//                .as(UpdateUserResponse.class);
-//
-//        response.setStatuscode(200);
-//        return response;
+    public UpdateUserResponse updateUser(UpdateUserRequest userRequest){
+        JSONObject requestParams=new JSONObject();
+        requestParams.put("name",userRequest.getUserName());
+
+        System.out.println(userRequest.getUserName());
+        UpdateUserResponse response=given()
+                .contentType(ContentType.JSON)
+                .body(requestParams.toJSONString())
+                .when()
+                .put("https://reqres.in/api/users/2")
+                .as(UpdateUserResponse.class);
+
+        response.setStatuscode(200);
+        return response;
 
     }
+
+    public Response deleteUser(DeleteUserRequest userRequest) {
+        return given()
+                .contentType(ContentType.JSON)
+                .pathParam("user", userRequest.getUserId())
+                .when()
+                .delete("https://reqres.in/api/users/{user}");
+    }
+
+
 }

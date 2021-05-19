@@ -1,8 +1,10 @@
 import createUser.request.CreateUserRequest;
 import createUser.response.CreateUserResponse;
+import deleteUser.DeleteUserRequest;
 import getUser.request.GetUserRequest;
 import getUser.response.GetUserResponse;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -57,6 +59,14 @@ public class APItesting {
         UpdateUserRequest userRequest=new UpdateUserRequest("Hari");
         UpdateUserResponse response = userClient.updateUser(userRequest);
         Assert.assertEquals(response.getStatusCode(),200);
+    }
+
+    @Test
+    public void shouldDeleteSpecificUser()
+    {
+        DeleteUserRequest userRequest=new DeleteUserRequest(3);
+        Response response = userClient.deleteUser(userRequest);
+        Assert.assertEquals(response.getStatusCode(),204);
     }
 
 

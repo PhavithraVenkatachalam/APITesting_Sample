@@ -1,1 +1,86 @@
-Hari
+HTTP/1.1 200 OK
+$Date: Wed, 19 May 2021 09:49:10 GMT
+.Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+*Etag: W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"
+Via: 1.1 vegur
+Cache-Control: max-age=14400
+CF-Cache-Status: HIT
+
+Age: 5653
+0cf-request-id: 0a25a0898500004ae7a222f000000001
+cExpect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+ßReport-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=X81f0oWKz4IdRCAMItjolo9FBpwN8%2BlxIqxD1uDOOXi%2BYgfHrdlcHw8e4gwTXX%2F%2BjMX8LH8TOvgZg5noa14WEtkXrR9AtNbIZlQ%3D"}],"group":"cf-nel","max_age":604800}
+-NEL: {"report_to":"cf-nel","max_age":604800}
+Vary: Accept-Encoding
+Server: cloudflare
+CF-RAY: 651c69ef3ad04ae7-HYD
+Content-Encoding: gzip
+Palt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{
+    "page": 1,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": [
+
+        {
+            "id": 1,
+/            "email": "george.bluth@reqres.in",
+$            "first_name": "George",
+"            "last_name": "Bluth",
+@            "avatar": "https://reqres.in/img/faces/1-image.jpg"
+        },
+
+        {
+            "id": 2,
+/            "email": "janet.weaver@reqres.in",
+#            "first_name": "Janet",
+#            "last_name": "Weaver",
+@            "avatar": "https://reqres.in/img/faces/2-image.jpg"
+        },
+
+        {
+            "id": 3,
+,            "email": "emma.wong@reqres.in",
+"            "first_name": "Emma",
+!            "last_name": "Wong",
+@            "avatar": "https://reqres.in/img/faces/3-image.jpg"
+        },
+
+        {
+            "id": 4,
++            "email": "eve.holt@reqres.in",
+!            "first_name": "Eve",
+!            "last_name": "Holt",
+@            "avatar": "https://reqres.in/img/faces/4-image.jpg"
+        },
+
+        {
+            "id": 5,
+1            "email": "charles.morris@reqres.in",
+%            "first_name": "Charles",
+#            "last_name": "Morris",
+@            "avatar": "https://reqres.in/img/faces/5-image.jpg"
+        },
+
+        {
+            "id": 6,
+/            "email": "tracey.ramos@reqres.in",
+$            "first_name": "Tracey",
+"            "last_name": "Ramos",
+@            "avatar": "https://reqres.in/img/faces/6-image.jpg"
+
+        }
+    ],
+    "support": {
+5        "url": "https://reqres.in/#support-heading",
+[        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+getUser.response.Data@12586e15
+Hari
